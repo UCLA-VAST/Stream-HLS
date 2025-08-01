@@ -532,6 +532,17 @@ bool dataflow::hasRuntimeAttr(Operation *op) {
   return op->hasAttrOfType<UnitAttr>("runtime");
 }
 
+// SA unroll attribute utils.
+void dataflow::setSALoopUnrollAttr(Operation *op, int64_t unroll) {
+  op->setAttr("SA_loop_unroll", IntegerAttr::get(IntegerType::get(op->getContext(), 64), unroll));
+}
+bool dataflow::hasSALoopUnrollAttr(Operation *op) {
+  return op->hasAttrOfType<IntegerAttr>("SA_loop_unroll");
+}
+int64_t dataflow::getSALoopUnrollAttr(Operation *op) {
+  return op->getAttrOfType<IntegerAttr>("SA_loop_unroll").getInt();
+}
+
 //===----------------------------------------------------------------------===//
 // ResourceAttr
 //===----------------------------------------------------------------------===//

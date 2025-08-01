@@ -59,6 +59,7 @@ std::unique_ptr<Pass> createPipelineInnerLoopsPass();
 std::unique_ptr<Pass> createBufferizeFuncArgsPass();
 std::unique_ptr<Pass> createStencilDataReusePass();
 std::unique_ptr<Pass> createEliminateArrayOfStreamsPass();
+std::unique_ptr<Pass> createSystolicArrayParameterizedPass();
 
 std::unique_ptr<Pass> createPrintDataflowGraphPass(std::string dotFileName = "graph.dot", bool mergeNodes = true);
 std::unique_ptr<Pass> createNodeGraphPipeliningPass(

@@ -98,6 +98,11 @@ bool hasColAttr(Operation *op);
 void setRowAttr(Operation *op);
 bool hasRowAttr(Operation *op);
 
+// SA unroll attribute utils.
+void setSALoopUnrollAttr(Operation *op, int64_t unroll);
+bool hasSALoopUnrollAttr(Operation *op);
+int64_t getSALoopUnrollAttr(Operation *op);
+
 /// Function directives attribute utils.
 FuncDirectiveAttr getFuncDirective(Operation *op);
 void setFuncDirective(Operation *op, FuncDirectiveAttr FuncDirective);

@@ -229,6 +229,15 @@ def StencilDataReuse :
   let dependentDialects = ["mlir::streamhls::dataflow::DataflowDialect"];
 }
 
+def SystolicArrayParameterized : Pass<"streamhls-systolic-array-parameterized", "func::FuncOp"> {
+  let summary = "Systolic array parameterized";
+  let description = [{
+    Systolic array parameterized
+  }];
+  let constructor = "mlir::streamhls::createSystolicArrayParameterizedPass()";
+  let dependentDialects = ["mlir::streamhls::dataflow::DataflowDialect"];
+}
+
 // ScaleHLS
 def LowerCopyToAffine : Pass<"scalehls-lower-copy-to-affine", "func::FuncOp"> {
   let summary = "Convert copy and assign to affine loops";
